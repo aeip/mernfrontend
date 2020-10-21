@@ -6,8 +6,8 @@ import Form from './Form';
 
 function App() {
   const url = 'https://mernbackendsvm.herokuapp.com';
-  const [genres, setGenres];
-  const [movies, setMovies];
+  const [genres, setGenres] = React.useState([]);
+  const [movies, setMovies] = React.useState([]);
 
   const emptyMovie = {
     title: '',
