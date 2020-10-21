@@ -5,9 +5,9 @@ const Movies = (props) => {
     console.log('movies component loaded');
 	const loaded = () => (
 		<div>
-			<h1>Movies</h1>
+			<h1>{props.genre.name} Movies</h1>
 			{movies.map((movie) => (
-				<h1>{movie.title}</h1>
+				<p>{movie.title}</p>
 			))}
 		</div>
 	);
