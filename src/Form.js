@@ -22,7 +22,7 @@ const Form = (props) => {
 			<input
 				type='number'
 				name='year'
-				value={formData.age}
+				value={formData.year}
 				onChange={handleChange}
 			/>
 			<input
