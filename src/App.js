@@ -30,7 +30,6 @@ const getMovies = () => {
 
 React.useEffect(() => {
   getGenres();
-  getMovies();
 },[]);
 
 const getGenres = () => {
@@ -39,11 +38,8 @@ const getGenres = () => {
   .then((data) => {
     setGenres(data);
   });
+  getMovies();
 };
-
-// React.useEffect(() => {
-//   getMovies();
-// },[]);
 
 const handleCreate = (newMovie) => {
   fetch(url + '/movie/', {
