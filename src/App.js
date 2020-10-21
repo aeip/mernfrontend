@@ -18,7 +18,7 @@ function App() {
   }
 
 const [selectedMovie, setSelectedMovie] = React.useState(emptyMovie);
-const [selectedGenre, setSelectedGenre] = React.useState({});
+// const [selectedGenre, setSelectedGenre] = React.useState({});
 
 const getMovies = () => {
   fetch(url + '/movie/')
@@ -76,16 +76,16 @@ const deleteMovie = (movie) => {
   .then(() => { getMovies()})
 }
 
-const selectGenre = (genre) => {
-  setSelectedGenre(genre);
-}
+// const selectGenre = (genre) => {
+//   setSelectedGenre(genre);
+// }
 
   return (
     <div className="App">
       <Link to='/create'>
 				<button>Add Movie</button>
 			</Link>
-      <switch>
+      <Switch>
         <Route exactpath="/" render={(rp) => <Genres {...rp} genres={genres} selectGenre={selectGenre} />}
         />
         <Route exactpath="/movie/" render={(rp) => <Movies {...rp} movies={movies} selectMovie={selectMovie} deleteMovie={deleteMovie} />}
@@ -109,7 +109,7 @@ const selectGenre = (genre) => {
 							<Form {...rp} label='update' movie={selectedMovie} handleSubmit={handleUpdate} />
 						)}
 					/>
-      </switch>
+      </Switch>
     </div>
   );
 }
