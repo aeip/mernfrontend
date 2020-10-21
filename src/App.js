@@ -6,7 +6,8 @@ import Movies from './Movies';
 import Form from './Form';
 
 function App() {
-  const url = 'https://mernbackendsvm.herokuapp.com';
+  const url =
+		'https://cors-anywhere.herokuapp.com/https://mernbackendsvm.herokuapp.com';
   const [genres, setGenres] = React.useState([]);
   const [movies, setMovies] = React.useState([]);
 
