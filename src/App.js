@@ -21,10 +21,10 @@ const [selectedMovie, setSelectedMovie] = React.useState(emptyMovie);
 const [selectedGenre, setSelectedGenre] = React.useState({});
 
 const getMovies = () => {
-  console.log('selected genre', selectedGenre.name);
   fetch(url + '/movie/' + selectedGenre.name)
   .then((response) => response.json())
   .then((data) => {
+    console.log('data: ', data)
     setMovies(data);
   }
   ).catch((error) => console.log("error: ", error))
@@ -95,7 +95,7 @@ const selectGenre = (genre) => {
       <Switch>
         <Route exact path="/" render={(rp) => <Genres {...rp} genres={genres} selectGenre={selectGenre} />}
         />
-        <Route exact path="/movie/" render={(rp) => <Movies {...rp} movies={movies} selectMovie={selectMovie} deleteMovie={deleteMovie} />}
+        <Route path="/movie/" render={(rp) => <Movies {...rp} movies={movies} selectMovie={selectMovie} deleteMovie={deleteMovie} />}
         />
         <Route
 						exact
