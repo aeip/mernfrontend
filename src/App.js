@@ -78,6 +78,7 @@ const deleteMovie = (movie) => {
 
 const selectGenre = (genre) => {
   setSelectedGenre(genre);
+  getMovies();
 }
 
   return (
