@@ -21,16 +21,21 @@ const [selectedMovie, setSelectedMovie] = React.useState(emptyMovie);
 const [selectedGenre, setSelectedGenre] = React.useState({});
 
 const getMovies = () => {
+  console.log('selected genre', selectedGenre.name);
   fetch(url + '/movie/' + selectedGenre.name)
   .then((response) => response.json())
   .then((data) => {
     setMovies(data);
-  });
+  }
+  ).catch((error) => console.log("error: ", error))
 };
 
 React.useEffect(() => {
   getGenres();
 },[]);
+React.useEffect(() => {
+	getMovies();
+}, [selectedGenre]);
 
 const getGenres = () => {
   fetch(url + '/genre/')
@@ -78,7 +83,8 @@ const deleteMovie = (movie) => {
 
 const selectGenre = (genre) => {
   setSelectedGenre(genre);
-  getMovies();
+  // getMovies();
+  // console.log("genre", genre);
 }
 
   return (
