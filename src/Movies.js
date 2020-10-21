@@ -2,12 +2,30 @@ import React from 'react';
 
 const Movies = (props) => {
     const { movies } = props;
-    console.log('movies component loaded');
 	const loaded = () => (
 		<div>
 			<h1>{props.genre.name} Movies</h1>
 			{movies.map((movie) => (
-				<p>{movie.title}</p>
+				<div>
+					<p>{movie.title}</p>
+					<p>{movie.year}</p>
+					<img src={movie.img} alt={movie.title} />
+                    <div>
+					<button
+						onClick={() => {
+							props.selectMovie(movie);
+							props.history.push('/edit');
+						}}>
+						Edit
+					</button>
+					<button
+						onClick={() => {
+							props.deleteMovie(movie);
+						}}>
+						Delete
+					</button>
+                    </div>
+				</div>
 			))}
 		</div>
 	);

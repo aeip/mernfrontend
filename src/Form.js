@@ -16,7 +16,7 @@ const Form = (props) => {
 			<input
 				type='text'
 				name='title'
-				value={formData.name}
+				value={formData.title}
 				onChange={handleChange}
 			/>
 			<input
