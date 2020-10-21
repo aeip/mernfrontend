@@ -29,7 +29,7 @@ const getMovies = () => {
 };
 
 React.useEffect(() => {
-  getMovies();
+  getGenres();
 },[]);
 
 const getGenres = () => {
@@ -40,9 +40,9 @@ const getGenres = () => {
   });
 };
 
-React.useEffect(() => {
-  getMovies();
-},[]);
+// React.useEffect(() => {
+//   getMovies();
+// },[]);
 
 const handleCreate = (newMovie) => {
   fetch(url + '/movie/', {
@@ -79,8 +79,6 @@ const deleteMovie = (movie) => {
 const selectGenre = (genre) => {
   setSelectedGenre(genre);
 }
-
-getGenres();
 
   return (
     <div className="App">
