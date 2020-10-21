@@ -31,6 +31,18 @@ React.useEffect(() => {
   getMovies();
 },[]);
 
+const getGenres = () => {
+  fetch(url + '/genre/')
+  .then((response) => response.json())
+  .then((data) => {
+    setGenres(data);
+  });
+};
+
+React.useEffect(() => {
+  getMovies();
+},[]);
+
 const handleCreate = (newMovie) => {
   fetch(url + '/movie/', {
     method: 'post',
@@ -67,16 +79,10 @@ const selectGenre = (genre) => {
   setSelectedGenre(genre);
 }
 
-const handleGenre = (genre) => {
-  const getMovies = (movie) => {
-    
-  }
-}
-
   return (
     <div className="App">
       <Link to='/create'>
-				<button>Add Dog</button>
+				<button>Add Movie</button>
 			</Link>
       <switch>
         <Route exactpath="/" render={(rp) => <Genres {...rp} genres={genres} selectGenre={selectGenre} />}
