@@ -86,9 +86,9 @@ const selectGenre = (genre) => {
 				<button>Add Movie</button>
 			</Link>
       <Switch>
-        <Route exactpath="/" render={(rp) => <Genres {...rp} genres={genres} selectGenre={selectGenre} />}
+        <Route exact path="/" render={(rp) => <Genres {...rp} genres={genres} selectGenre={selectGenre} />}
         />
-        <Route exactpath="/movie/" render={(rp) => <Movies {...rp} movies={movies} selectMovie={selectMovie} deleteMovie={deleteMovie} />}
+        <Route exact path="/movie/" render={(rp) => <Movies {...rp} movies={movies} selectMovie={selectMovie} deleteMovie={deleteMovie} />}
         />
         <Route
 						exact
