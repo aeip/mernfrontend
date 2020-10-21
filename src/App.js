@@ -18,10 +18,10 @@ function App() {
   }
 
 const [selectedMovie, setSelectedMovie] = React.useState(emptyMovie);
-// const [selectedGenre, setSelectedGenre] = React.useState({});
+const [selectedGenre, setSelectedGenre] = React.useState({});
 
 const getMovies = () => {
-  fetch(url + '/movie/')
+  fetch(url + '/movie/' + selectedGenre.name)
   .then((response) => response.json())
   .then((data) => {
     setMovies(data);
@@ -76,9 +76,11 @@ const deleteMovie = (movie) => {
   .then(() => { getMovies()})
 }
 
-// const selectGenre = (genre) => {
-//   setSelectedGenre(genre);
-// }
+const selectGenre = (genre) => {
+  setSelectedGenre(genre);
+}
+
+getGenres();
 
   return (
     <div className="App">
