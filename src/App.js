@@ -35,6 +35,15 @@ React.useEffect(() => {
   getGenres();
 },[]);
 React.useEffect(() => {
+  const getMovies = () => {
+		fetch(url + '/movie/' + selectedGenre.name)
+			.then((response) => response.json())
+			.then((data) => {
+				console.log('data: ', data);
+				setMovies(data);
+			})
+			.catch((error) => console.log('error: ', error));
+	};
 	getMovies();
 }, [selectedGenre]);
 
