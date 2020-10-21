@@ -30,6 +30,7 @@ const getMovies = () => {
 
 React.useEffect(() => {
   getGenres();
+  getMovies();
 },[]);
 
 const getGenres = () => {
